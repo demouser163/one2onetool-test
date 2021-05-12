@@ -20,13 +20,13 @@
 
 2. Connect AWS Server:
    - Place the ssh pem key (test-key.pem) into location
-   - Change permission
+   - Change permission:
        chmod 400 test-key.pem
    - Command to connect server:
        ssh -i "test-key.pem" ubuntu@public_ip-address
 
 3. Install software
-   - Install docker
+   - Install docker:
       sudo apt-get update -y
       sudo apt-get install docker.io
       docker --version
@@ -80,7 +80,7 @@
      npm test
 
 8. login to AWS VM
-    Login into docker hub
+    Login into docker hub:
     docker login [userid and password]
 
     goto Docker Build and publish
@@ -92,7 +92,7 @@
 
 10. Containerize the application.
     Login to AWS VM
-    pull the image
+    pull the image:
     docker pull ramudocker15/nodejs-app
     docker images
     docker run -p 3000:3000 ramudocker15/nodejs-app
