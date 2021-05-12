@@ -1,17 +1,15 @@
-FROM node:10-alpine
+FROM node:latest
 
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+MAINTAINER Ramu Arumugam 
 
-WORKDIR /home/node/app
+RUN echo "Tryin to build my first application"
 
-COPY package*.json ./
+COPY . /var/www
 
-USER node
+WORKDIR /var/www
 
 RUN npm install
 
-COPY --chown=node:node . .
-
 EXPOSE 3000
 
-CMD [ "node", "app.js" ]
+ENTRYPOINT ["npm","start"]
