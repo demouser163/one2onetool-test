@@ -26,7 +26,7 @@
        ssh -i "test-key.pem" ubuntu@public_ip-address
 
 3. Install software
-   - Install docker
+   - Install docker:
       sudo apt-get update -y
       sudo apt-get install docker.io
       docker --version
@@ -58,6 +58,7 @@
     NodeJs Plugin
     
 6.  Create CICD pipeline Job:
+
     Create the free style job
     goto --> This project is parameterised --> select choice parameter
      - branch (staging,release)
@@ -65,7 +66,7 @@
     goto --> Source Code Management --> select Git --. add the github url
      https://github.com/demouser163/one2onetool-test.git
 
-    Add github credentials 
+    Add github credentials:
     Branch specifier --> $branch
 
 7. Build section:
@@ -80,7 +81,7 @@
      npm test
 
 8. login to AWS VM
-    Login into docker hub
+    Login into docker hub:
     docker login [userid and password]
 
     goto Docker Build and publish
@@ -92,7 +93,7 @@
 
 10. Containerize the application.
     Login to AWS VM
-    pull the image
+    pull the image:
     docker pull ramudocker15/nodejs-app
     docker images
     docker run -p 3000:3000 ramudocker15/nodejs-app
