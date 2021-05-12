@@ -10,6 +10,8 @@ WORKDIR /var/www
 
 RUN npm install
 
+RUN npm rebuild node-saas
+
 EXPOSE 3000
 
 ENTRYPOINT ["npm","start"]
